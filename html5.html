@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>html5.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+		<style>
+			div.ss {
+				width: 50%;
+				float: left;
+				text-align:center;
+			}
+			div.ss img {
+			    width: 98%;
+			    height: auto;
+			}
+			div.desc {
+			    padding: 15px;
+			    text-align: center;
+			    font-size:12px;
+			    font-family:"华文楷体";
+			}
+			
+			div.black_overlay{
+				display:none;
+				position:fixed;
+				top:0%;
+				left:0%;
+				width:100%;
+				height:100%;
+				background-color:black;
+				z-index:1001;
+				opacity:0.6;
+			}
+			div.white_content{
+				display:none;
+				position:fixed;
+				top:25%;
+				left:25%;
+				width:50%;
+				height:50%;
+				margin-left:-25%
+				padding:20px;
+				border:1px solid orange;
+				background-color:white;
+				z-index:1002;
+				overflow:auto;
+			}
+		</style>
+  </head>
+  
+  <body style="background-color:rgba(255,255,0,0.5)" onselectstart="return false">
+		<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js">
+			
+		</script>
+		<script>
+			$(document).ready(function(){
+			  $("p").click(function(){
+			    $(this).hide();
+			  });
+			  
+			  $("a").mouseenter(function(){
+			    alert('您的鼠标移到了 id="p1" 的元素上!');
+			  });
+			});
+			function toActivity(params){
+				//window.Android.showInfo(document.getElementById("content").innerHTML);
+				var json = {};
+				if(params == 22){
+				document.getElementById('light').style.display='block';
+				document.getElementById('fade').style.display='block';
+					json.name = document.getElementById("img1").alt;
+					json.src = document.getElementById("img1").src;
+					json.code = 1;
+				}else if(params == 2){
+					json.name = document.getElementById("img2").alt;
+					json.src = document.getElementById("img2").src;
+					json.code = 2;
+				}else if(params == 3){
+					json.name = document.getElementById("img3").alt;
+					json.src = document.getElementById("img3").src;
+					json.code = 3;
+				}else if(params == 4){
+					json.name = document.getElementById("img4").alt;
+					json.src = document.getElementById("img4").src;
+					json.code = 4;
+				}else if(params == 11){
+					json.name = document.getElementById("img11").alt;
+					json.src = document.getElementById("img11").src;
+					json.code = 11;
+				}else if(params == 12){
+					json.name = document.getElementById("img12").alt;
+					json.src = document.getElementById("img12").src;
+					json.code = 12;
+				}else if(params == 13){
+					json.name = document.getElementById("img13").alt;
+					json.src = document.getElementById("img13").src;
+					json.code = 13;
+				}else if(params == 14){
+					json.name = document.getElementById("img14").alt;
+					json.src = document.getElementById("img14").src;
+					json.code = 14;
+				}
+				window.Android.showInfo(JSON.stringify(json));
+			}
+			function toH5Page(params){
+				document.getElementById("content").innerHTML = params;
+			}
+			function hideView(){
+				document.getElementById('light').style.display='none';
+				document.getElementById('fade').style.display='none';
+			}
+		</script>
+		<a style="float:left">aaaaaaaaa</a>
+		<br/>
+		<div id="light" class="white_content">sssssssssssssssssss</div>
+		<div id="fade" class="black_overlay" onclick="hideView()"></div>
+		<div class="ss" onclick="toActivity(1);">
+			<img id="img1" src="http://static.runoob.com/images/demo/demo1.jpg" alt="图片文本描述" width="50%" height="auto">
+			<div class="desc">这里添加图片文本描述</div>
+		</div>
+		<div class="ss" onclick="toActivity(2);">
+			<img id="img2" src="http://static.runoob.com/images/demo/demo2.jpg" alt="图片文本描述" width="50%" height="auto">
+			<div class="desc">这里添加图片文本描述</div>
+		</div>
+		<div class="ss" onclick="toActivity(3);">
+			<img id="img3" src="http://static.runoob.com/images/demo/demo3.jpg" alt="图片文本描述" width="50%" height="auto">
+			<div class="desc">这里添加图片文本描述</div>
+		</div>
+		<div class="ss" onclick="toActivity(4);">
+			<img id="img4" src="http://static.runoob.com/images/demo/demo4.jpg" alt="图片文本描述" width="50%" height="auto">
+			<div class="desc">这里添加图片文本描述</div>
+		</div>
+		<div class="ss" onclick="toActivity(11);">
+		      <img id="img11" src="http://static.runoob.com/images/demo/demo1.jpg" alt="图片文本描述" width="50%" height="auto">
+		    <div class="desc">这里添加图片文本描述</div>
+		</div>
+		<div class="ss" onclick="toActivity(12);">
+		      <img id="img12" src="http://static.runoob.com/images/demo/demo2.jpg" alt="图片文本描述" width="50%" height="auto">
+		    <div class="desc">这里添加图片文本描述</div>
+		</div>
+		 
+		<div class="ss" onclick="toActivity(13);">
+		      <img id="img13" src="http://static.runoob.com/images/demo/demo3.jpg" alt="图片文本描述" width="50%" height="auto">
+		    <div class="desc">这里添加图片文本描述</div>
+		</div>
+		<div class="ss" onclick="toActivity(14);">
+		      <img id="img14" src="http://static.runoob.com/images/demo/demo4.jpg" alt="图片文本描述" width="50%" height="auto">
+		    <div class="desc">这里添加图片文本描述</div>
+		</div>
+		
+		<div class="ss" onclick="toActivity(15);">
+			<img id="img15" src="http://static.runoob.com/images/demo/demo1.jpg" alt="图片文本描述" width="50%" height="auto">
+			<div class="desc">这里添加图片文本描述</div>
+		</div>
+		<div class="ss" onclick="toActivity(16);">
+			<img id="img16" src="http://static.runoob.com/images/demo/demo2.jpg" alt="图片文本描述" width="50%" height="auto">
+			<div class="desc">这里添加图片文本描述</div>
+		</div>
+		<div class="ss" onclick="toActivity(17);">
+			<img id="img17" src="http://static.runoob.com/images/demo/demo3.jpg" alt="图片文本描述" width="50%" height="auto">
+			<div class="desc">这里添加图片文本描述</div>
+		</div>
+		<div class="ss" onclick="toActivity(18);">
+			<img id="img18" src="http://static.runoob.com/images/demo/demo4.jpg" alt="图片文本描述" width="50%" height="auto">
+			<div class="desc">这里添加图片文本描述</div>
+		</div>
+		<div class="ss" onclick="toActivity(19);">
+		      <img id="img19" src="http://static.runoob.com/images/demo/demo1.jpg" alt="图片文本描述" width="50%" height="auto">
+		    <div class="desc">这里添加图片文本描述</div>
+		</div>
+		<div class="ss" onclick="toActivity(20);">
+		      <img id="img20" src="http://static.runoob.com/images/demo/demo2.jpg" alt="图片文本描述" width="50%" height="auto">
+		    <div class="desc">这里添加图片文本描述</div>
+		</div>
+		 
+		<div class="ss" onclick="toActivity(21);">
+		      <img id="img2113" src="http://static.runoob.com/images/demo/demo3.jpg" alt="图片文本描述" width="50%" height="auto">
+		    <div class="desc">这里添加图片文本描述</div>
+		</div>
+		<div class="ss" onclick="toActivity(22);">
+		      <img id="img22" src="http://static.runoob.com/images/demo/demo4.jpg" alt="图片文本描述" width="50%" height="auto">
+		    <div class="desc">这里添加图片文本描述</div>
+		</div>
+	</body>
+</html>
